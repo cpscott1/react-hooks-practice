@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 
 function App() {
-  const [state, setState] = useState({
-    city: '',
-    country: ''
-  })
+  const [city, setCity] = useState('')
+  const [country, setCountry] = useState('')
+  
 
   const handleCityChange = (event) => {
-    setState({
-    ...state, city: event.target.value
-    })
+    setCity(event.target.value)
   }
 
   const handleCountryChange = (event) => {
-    setState({
-    ...state, country: event.target.value
-    })
+    setCountry(event.target.value)
   }
 
   return (
@@ -24,7 +19,7 @@ function App() {
         <input
           type="text"
           placeholder="city"
-          value={state.city}
+          value={city}
           onChange={handleCityChange}
         />
       </div>
@@ -32,12 +27,12 @@ function App() {
         <input
           type="text"
           placeholder="country"
-          value={state.country}
+          value={country}
           onChange={handleCountryChange}
         />
       </div>
       <div>
-        You live in {`${state.city}, ${state.country}`}
+        You live in {`${city}, ${country}`}
       </div>
     </form>
   )
