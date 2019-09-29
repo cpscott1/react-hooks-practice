@@ -1,12 +1,45 @@
 import React, { useState } from 'react';
 
 function App() {
-  const [activated, setActivated] = useState(false)
-  const buttonText = activated ? 'Active' : 'Inactive';
+  const [state, setState] = useState({
+    city: '',
+    country: ''
+  })
+
+  const handleCityChange = (event) => {
+    setState({
+    ...state, city: event.target.value
+    })
+  }
+
+  const handleCountryChange = (event) => {
+    setState({
+    ...state, country: event.target.value
+    })
+  }
+
   return (
-    <button>
-      { buttonText }
-    </button>
+    <form>
+      <div>
+        <input
+          type="text"
+          placeholder="city"
+          value={state.city}
+          onChange={handleCityChange}
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="country"
+          value={state.country}
+          onChange={handleCountryChange}
+        />
+      </div>
+      <div>
+        You live in {`${state.city}, ${state.country}`}
+      </div>
+    </form>
   )
 }
 
