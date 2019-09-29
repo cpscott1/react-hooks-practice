@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
+  useState()
+
   return (
-    <div>
-      <h1>This is a test functional component</h1>
-    </div>
-  );
+    <button>
+      My text
+    </button>
+  )
 }
 
 export default App;
