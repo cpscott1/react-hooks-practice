@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 function App() {
-  useState()
-
+  const [activated, setActivated] = useState(false)
+  const buttonText = activated ? 'Active' : 'Inactive';
   return (
     <button>
-      My text
+      { buttonText }
     </button>
   )
 }
